@@ -16,10 +16,7 @@ const connectDB = async () => {
         });
 
         // Connect to MongoDB
-        await mongoose.connect(`${process.env.MONGODB_URI}/lms`, {
-            useNewUrlParser: true,
-            useUnifiedTopology: true,
-        });
+        await mongoose.connect(`${process.env.MONGODB_URI}/lms`);
 
         console.log("MongoDB connection established.");
     } catch (error) {
