@@ -2,7 +2,6 @@ import { Webhook } from "svix";
 import User from "../models/User";
 
 // API Conroller Function To Manage Clerk User With Database
-
 const clerkWebhooks = async (req, res) => {
 	try {
 		const whook = new Webhook(process.env.CLERT_WEBHOOK_SECRET);
