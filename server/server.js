@@ -7,11 +7,18 @@ import {clerkWebhooks} from "./controllers/webhooks.js";
 // Initialize Express
 const app = express();
 
+const corsconfig = {
+    origin: '*',
+    credential: true,
+    methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE'],
+}
+
 // Connect to database
 await connectDB()
 
 // Middlewares
-app.use(cors());
+app.use(cors(corsconfig));
+app.use(express.json());
 
 // Routes
 app.get('/', (req, res) => res.send('API Working'));
